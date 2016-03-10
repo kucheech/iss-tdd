@@ -1,9 +1,6 @@
 package iss.pos.promotion;
 
-import java.util.ArrayList;
-
 import iss.pos.Order;
-import iss.pos.OrderItem;
 
 public class DiscountCalculator {
 
@@ -16,21 +13,7 @@ public class DiscountCalculator {
 	public Order calculateDiscount(Order order) {
 
 		Order orderWithDiscounts = promo.applyPromotion(order);
-		
-		switch (promo.getId()) {
-		case 1:
-			order.calculateDiscount();
-			break;
-		case 2:
-			order.calculateDiscount2();
-			break;
-		case 3:
-			//order.calculateDiscount3();
-			break;
-		default:
-			System.out.println("Invalid promotion");
-		}
-		
+				
 		return orderWithDiscounts;
 	}
 }

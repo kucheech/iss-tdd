@@ -26,7 +26,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0; //no discount
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
@@ -48,7 +48,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0.3 * Products.GetProduct("blueDress").getPrice();
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -71,7 +71,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 50; //$50 discount for blue dress
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -93,7 +93,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 60;
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
@@ -115,7 +115,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 60;
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
@@ -138,7 +138,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0.1*Products.GetProduct("blueDress").getPrice(); 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -161,7 +161,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0.2 * (Products.GetProduct("blueDress").getPrice() + Products.GetProduct("greenDress").getPrice()); 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -184,7 +184,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0.2 * (Products.GetProduct("blueDress").getPrice() * 2 ); 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -208,7 +208,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0.2 * (Products.GetProduct("blueDress").getPrice() + Products.GetProduct("greenDress").getPrice()); 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
@@ -231,7 +231,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0.1 * (Products.GetProduct("blueDress").getPrice() + Products.GetProduct("whiteSocks").getPrice()); 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 	
@@ -254,7 +254,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0.1 * Products.GetProduct("blueDress").getPrice() + 0.2*Products.GetProduct("redSocks").getPrice()*2; 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
