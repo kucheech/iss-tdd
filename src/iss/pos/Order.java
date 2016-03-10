@@ -8,10 +8,12 @@ import java.util.List;
 public class Order {
 
 	private List<OrderItem> items;
+	private List<Discount> discounts;
 	private double discount;
 
 	public Order() {
 		items = new ArrayList<OrderItem>();
+		discounts = new ArrayList<Discount>();
 		discount = 0;
 	}
 
@@ -28,6 +30,7 @@ public class Order {
 			oi.setQuantity(oi.getQuantity() + qty);
 		}
 	}
+	
 
 	public OrderItem getOrderItem(String sku) {
 		Iterator<OrderItem> itr = items.iterator();
@@ -140,26 +143,6 @@ public class Order {
 			}
 		}
 
-		// sortByStyle(copy);
-		// itr = copy.iterator();
-		// //System.out.println(copy.size());
-		// while (itr.hasNext()) {
-		// OrderItem oi = itr.next();
-		// //System.out.println(oi.getProduct().getStyle());
-		// if(itr.hasNext()) {
-		// OrderItem oi2 = itr.next();
-		// if(oi.getProduct().hasSameStyle(oi2.getProduct())) {
-		// double price1 = oi.getProduct().getPrice();
-		// double price2 = oi2.getProduct().getPrice();
-		// System.out.println(price1 + " " + price2);
-		// oi.setQuantity(oi.getQuantity()-1);
-		// oi2.setQuantity(oi2.getQuantity()-1);
-		// }
-		// }
-		// }
-
-		// System.out.println(copy.size());
-
 		itr = copy.iterator();
 		while (itr.hasNext()) {
 			OrderItem oi = itr.next();
@@ -249,5 +232,25 @@ public class Order {
 
 		return items;
 	}
+	
+	public List<Discount> getDiscounts() {
+
+		return discounts;
+	}
+
+	public void add(Discount discount) {		
+		discounts.add(discount);
+	}
+	
+	public double getTotalDiscount() {
+		double total = 0;
+		Iterator<Discount> itr = discounts.iterator();
+		while(itr.hasNext()) {
+			total += itr.next().getAmount();
+		}
+		
+		return total;
+	}
+	
 
 }

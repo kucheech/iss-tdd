@@ -276,7 +276,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -298,7 +298,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
@@ -322,7 +322,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 0; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
@@ -344,7 +344,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -367,7 +367,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -390,7 +390,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 40; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -413,7 +413,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 40; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -436,7 +436,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
@@ -458,7 +458,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -481,7 +481,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -504,7 +504,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -528,7 +528,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -552,7 +552,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 40; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -576,7 +576,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 40; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
@@ -600,7 +600,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
 
@@ -623,7 +623,7 @@ public class DiscountTest {
         //double expectedValue = 0;//TODO: set the expected value;
         double expectedValue = 20; //no discount 
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, newOrder.getDiscount(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
     
