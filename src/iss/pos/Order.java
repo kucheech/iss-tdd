@@ -42,6 +42,19 @@ public class Order {
 		return null;
 	}
 
+	public OrderItem getOrderItemBySKU(ArrayList<OrderItem> list, String sku) {
+		Iterator<OrderItem> itr = list.iterator();
+
+		while (itr.hasNext()) {
+			OrderItem oi = itr.next();
+
+			if (oi.getProduct().getSku().equalsIgnoreCase(sku)) {
+				return oi;
+			}
+		}
+		return null;
+	}
+
 	public OrderItem getOrderItemByStyle(ArrayList<OrderItem> list, String style) {
 		Iterator<OrderItem> itr = list.iterator();
 
@@ -55,6 +68,7 @@ public class Order {
 		return null;
 	}
 
+
 	public int getTotalQty(ArrayList<OrderItem> list) {
 		Iterator<OrderItem> itr = list.iterator();
 		int totalQty = 0;
@@ -66,7 +80,6 @@ public class Order {
 		
 		return totalQty;
 	}
-
 	
 	
 	public void sortByStyle(ArrayList<OrderItem> list) {
@@ -183,11 +196,11 @@ public class Order {
 			String style = oi.getProduct().getStyle();
 			itr.remove();
 			
-			oi = getOrderItemByStyle(copy, oi.getProduct().getStyle());
+			oi = getOrderItemByStyle(copy, style);
 			while(oi != null) {
 				list.add(oi);
 				copy.remove(oi);
-				oi = getOrderItemByStyle(copy, oi.getProduct().getStyle());
+				oi = getOrderItemByStyle(copy, style);
 			}
 			
 			double discountAmount = 0.1;			
@@ -211,36 +224,20 @@ public class Order {
 		ArrayList<OrderItem> copy = new ArrayList<OrderItem>();
 		copy.addAll(items);
 
-		Iterator<OrderItem> itr = copy.iterator();
-		while (itr.hasNext()) {
-			ArrayList<OrderItem> list = new ArrayList<OrderItem>();
-			OrderItem oi = itr.next();
-			list.add(oi);			
-			// System.out.println(oi.getProduct().getStyle());
-			String style = oi.getProduct().getStyle();
-			itr.remove();
-			
-			oi = getOrderItemByStyle(copy, oi.getProduct().getStyle());
-			while(oi != null) {
-				list.add(oi);
-				copy.remove(oi);
-				oi = getOrderItemByStyle(copy, oi.getProduct().getStyle());
-			}
-			
-			double discountAmount = 0.1;			
-			if(list.size() > 1 || list.get(0).getQuantity() > 1) {
-				discountAmount = 0.2;
-			} 
-			Iterator<OrderItem> itr2 = list.iterator();
-			while(itr2.hasNext()) {
-				OrderItem oi2 = itr2.next();
-				discount += discountAmount * oi2.getQuantity() * oi2.getProduct().getPrice();
-			}
-	 
-
+		ArrayList<OrderItem> list = new ArrayList<OrderItem>();
+		String style = "3001"; //for invisible socks
+		OrderItem oi = getOrderItemByStyle(copy, "3001");
+		while(oi != null) {
+			list.add(oi);
+			copy.remove(oi);
+			oi = getOrderItemByStyle(copy, style);
 		}
-
-
+			
+		double discountAmount = 20; // 45-25
+		int qty = getTotalQty(list);		
+		int numTriples = qty / 3; //integer division
+		discount += numTriples * discountAmount;
+		
 	}
 	
 

@@ -14,6 +14,8 @@ public class Products {
         products.put("blueDress", new Product("1001.3", "Blue Dress", 100.0));
         products.put("whiteSocks", new Product("2001.1", "White Socks", 10.0));
         products.put("redSocks", new Product("2001.2", "Red Socks", 10.0));
+        products.put("invisibleWhiteSocks", new Product("3001.1", "Invisible White Socks", 15.0));
+        products.put("invisibleRedSocks", new Product("3001.2", "Invisible Red Socks", 15.0));
     }
 
     public static Product GetProduct(String name) {
