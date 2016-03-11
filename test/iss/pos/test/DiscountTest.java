@@ -72,7 +72,7 @@ public class DiscountTest {
 
         //verify
         //double expectedValue = 0;//TODO: set the expected value;
-        double expectedValue = 50; //$50 discount for blue dress
+        double expectedValue = 30; //$50 discount for blue dress
         //System.out.println("discount: " + expectedValue);
         assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
@@ -95,9 +95,9 @@ public class DiscountTest {
 
         //verify
         //double expectedValue = 0;//TODO: set the expected value;
-        double expectedValue = 150; //$50 discount for blue dress
+        double expectedValue = 170; //$50 discount for blue dress
         //System.out.println("discount: " + expectedValue);
-        assertEquals(expectedValue, order.getTotalPrice(), 0.001);
+
         assertEquals(expectedValue, newOrder.getTotalPrice(), 0.001);
         //TODO: add additional verification if necessary
     }
