@@ -9,13 +9,10 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
-    <path id="JUnit 4.libraryclasspath">
-        <pathelement location="../../../eclipse-java-mars-2-win32-x86_64/eclipse/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
-        <pathelement location="../../../eclipse-java-mars-2-win32-x86_64/eclipse/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
-    </path>
     <path id="PromotionJava.classpath">
         <pathelement location="bin"/>
-        <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="lib/junit.jar"/>
+        <pathelement location="lib/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
