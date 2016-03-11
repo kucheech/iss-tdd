@@ -14,47 +14,59 @@ public class UserInterface {
 
 	public static void main(String[] args) {
 		Order order = new Order();
-		
+
 		ArrayList<Product> productList = new ArrayList<>();
 		Iterator it = Products.getProducts().entrySet().iterator();
 		while (it.hasNext()) {
-	        Map.Entry pair = (Map.Entry)it.next();
-	        productList.add((Product)pair.getValue());
-	    }
-		
+			Map.Entry pair = (Map.Entry) it.next();
+			productList.add((Product) pair.getValue());
+		}
+
 		Scanner in = new Scanner(System.in);
-		
+
+		Promotion promo = new Promotion(1); // TODO: setup the promotion as you
+											// see fit
+
+		System.out.println("Enter promotion to disable or N to skip");
+		String sinput = in.nextLine();
+
+		try {
+			int promotionToDisable = Integer.parseInt(sinput);
+			promo.DisablePromotion(promotionToDisable);
+		} catch (NumberFormatException e) {
+			System.out.println("Not disabling any promotion");
+		}
+
 		while (true) {
 			int i;
 			for (i = 0; i < productList.size(); ++i) {
-				System.out.println((i+1) + ": " + productList.get(i).getName());
+				System.out.println((i + 1) + ": "
+						+ productList.get(i).getName());
 			}
-			System.out.println((i+1) + ": <QUIT>\n");
-			
+			System.out.println((i + 1) + ": <QUIT>\n");
+
 			System.out.print("Select: ");
 			int input = in.nextInt();
-			
-			if (input == i+1) {
+
+			if (input == i + 1) {
 				break;
 			}
-			
+
 			System.out.print("Qty: ");
 			int qty = in.nextInt();
-			
+
 			if (input > 0 && input <= productList.size()) {
-		        order.add(productList.get(input-1), qty);
+				order.add(productList.get(input - 1), qty);
 			}
-			
+
 			System.out.println();
 		}
-		in.close();
-		
-		Promotion promo = new Promotion(1); //TODO: setup the promotion as you see fit
-        DiscountCalculator dc = new DiscountCalculator(promo);
+
+		DiscountCalculator dc = new DiscountCalculator(promo);
 		Order newOrder = dc.calculateDiscount(order);
-		
+
 		System.out.println("\nCart:");
-		
+
 		List<OrderItem> items = order.getItems();
 		Iterator<OrderItem> itr = items.iterator();
 
@@ -66,6 +78,8 @@ public class UserInterface {
 
 		System.out.println("Total: $" + newOrder.getTotalPrice());
 		System.out.println("Discount: $" + newOrder.getTotalDiscount());
+
+		in.close();
 	}
 
 }
