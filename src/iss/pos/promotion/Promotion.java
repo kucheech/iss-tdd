@@ -33,7 +33,7 @@ public class Promotion {
 	
 	public Order applyPromotion(Order order) {
 		
-		if(aPromotionsEnabled[id] == false){
+		if(aPromotionsEnabled[id-1] == false){
 			System.out.println("Promotion " + id + " disabled!");
 			return order;
 		}
