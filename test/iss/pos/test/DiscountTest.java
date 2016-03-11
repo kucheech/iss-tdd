@@ -2,7 +2,10 @@ package iss.pos.test;
 
 import static org.junit.Assert.*;
 
+import java.util.Random;
+
 import org.junit.Test;
+
 import iss.pos.*;
 import iss.pos.promotion.*;
 
@@ -76,6 +79,30 @@ public class DiscountTest {
     }
     
     @Test
+    public void test1CBuy2ItemsOfSameStyleCheckTotalPrice() {
+
+        //setup
+        Promotion promo = new Promotion(1); //TODO: setup the promotion as you see fit
+        DiscountCalculator dc = new DiscountCalculator(promo);
+
+//        Order order = null; //TODO: setup the order, you can refer to SampleTest.java for example
+        Order order = new Order();
+        order.add(Products.GetProduct("blueDress"), 1);
+        order.add(Products.GetProduct("greenDress"), 1);
+
+        //exercise
+        Order newOrder = dc.calculateDiscount(order);
+
+        //verify
+        //double expectedValue = 0;//TODO: set the expected value;
+        double expectedValue = 150; //$50 discount for blue dress
+        //System.out.println("discount: " + expectedValue);
+        assertEquals(expectedValue, order.getTotalPrice(), 0.001);
+        assertEquals(expectedValue, newOrder.getTotalPrice(), 0.001);
+        //TODO: add additional verification if necessary
+    }
+    
+    @Test
     public void test1DBuyOddItemsOfSameSKU() {
 
         //setup
@@ -97,7 +124,7 @@ public class DiscountTest {
         //TODO: add additional verification if necessary
     }
 
-     @Test
+    @Test
     public void test1DBuyEvenItemsOfSameSKU() {
 
         //setup
@@ -118,7 +145,30 @@ public class DiscountTest {
         assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
         //TODO: add additional verification if necessary
     }
-
+    
+    @Test
+    public void test1DBuyNItemsOfSameSKU() {
+        //setup
+        Promotion promo = new Promotion(1);
+        DiscountCalculator dc = new DiscountCalculator(promo);
+        Order order = new Order();
+        
+        // blue dress, red dress, green dress
+        int nBlueDress = 1;
+        int nRedDress = 2;
+        int nGreenDress = 3;
+        
+        order.add(Products.GetProduct("blueDress"), nBlueDress);
+        order.add(Products.GetProduct("redDress"), nRedDress);
+        order.add(Products.GetProduct("greenDress"), nGreenDress);
+        
+        //exercise
+        Order newOrder = dc.calculateDiscount(order);
+        
+        //verify
+        double expectedValue = Math.floor((nBlueDress + nRedDress + nGreenDress)/(2.0)) * 0.3 * 100;
+        assertEquals(expectedValue, newOrder.getTotalDiscount(), 0.001);
+    }
 
     @Test
     public void test2ABuy1Item() {
