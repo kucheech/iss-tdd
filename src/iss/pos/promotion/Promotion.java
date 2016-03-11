@@ -10,16 +10,33 @@ import iss.pos.OrderItem;
 public class Promotion {
 	private int id;
 	
+	private boolean[] aPromotionsEnabled = new boolean[3];
+	
 	public Promotion(int id) {
 		this.id = id;
+		aPromotionsEnabled[0] = true;
+		aPromotionsEnabled[1] = true;
+		aPromotionsEnabled[2] = true;
 	}
 		
 	public int getId() {
 		return id;
 	}
 	
+	public void EnablePromotion(int indexToEnable){
+		aPromotionsEnabled[indexToEnable] = true;
+	}
+	
+	public void DisablePromotion(int indexToEnable){
+		aPromotionsEnabled[indexToEnable] = false;
+	}
+	
 	public Order applyPromotion(Order order) {
 		
+		if(aPromotionsEnabled[id] == false){
+			System.out.println("Promotion " + id + " disabled!");
+			return order;
+		}
 		
 		switch(id) {
 		case 1: 
