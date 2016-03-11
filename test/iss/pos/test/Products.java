@@ -22,4 +22,8 @@ public class Products {
         return products.get(name);
     }
 
+	public static HashMap<String, Product> getProducts() {
+		return products;
+	}
+
 }
