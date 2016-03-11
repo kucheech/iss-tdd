@@ -91,8 +91,8 @@ public class Promotion {
 				// oi.setQuantity(oi.getQuantity()-1);
 				oi2.setQuantity(oi2.getQuantity() - 1);
 
-				String discountMessage = "50% off for 2nd item of same style, different SKU";
-				Discount discount = new Discount(discountMessage, 0.5 * (price1 < price2 ? price1 : price2));
+				String discountMessage = "30% off for 2nd item of same style, different SKU";
+				Discount discount = new Discount(discountMessage, 0.3 * (price1 < price2 ? price1 : price2));
 				order.add(discount);
 				if (oi2.getQuantity() == 0) {
 					copy.remove(oi2);
